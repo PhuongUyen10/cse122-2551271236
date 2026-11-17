@@ -1,0 +1,210 @@
+:root {
+    --xanh-bien: #0b4f63;
+    --xanh-dam: #073a49;
+    --xanh-nhat: #e6f2f4;
+    --vang-cat: #d9a441;
+    --muc: #22343a;
+    --xam: #5d7077;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 48px 16px;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--muc);
+    background:
+        radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.18), transparent 45%),
+        linear-gradient(160deg, #0b4f63 0%, #0a6a7d 45%, #0d3b4a 100%);
+}
+
+.trang {
+    max-width: 980px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(4, 30, 38, 0.35);
+}
+
+/* ---------- Phần tiêu đề ---------- */
+
+.tieu-de {
+    position: relative;
+    padding: 56px 56px 48px;
+    color: #ffffff;
+    background:
+        linear-gradient(rgba(6, 49, 62, 0.55), rgba(6, 49, 62, 0.75)),
+        linear-gradient(135deg, var(--xanh-dam), var(--xanh-bien));
+    text-align: center;
+}
+
+.tieu-de::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 120px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--vang-cat);
+    transform: translateX(-50%);
+}
+
+.tieu-de__nhan {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #ffd98a;
+    margin-bottom: 14px;
+}
+
+.tieu-de__chinh {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.4rem, 6vw, 3.9rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.tieu-de__phu {
+    margin-top: 12px;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    color: #d5ebef;
+}
+
+/* ---------- Thân bài ---------- */
+
+.bai-viet {
+    padding: 44px 56px 24px;
+}
+
+.bai-viet__muc {
+    margin: 20px 0 14px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    color: var(--xanh-dam);
+}
+
+.bai-viet__muc:first-of-type {
+    margin-top: 0;
+}
+
+.bai-viet__muc + p {
+    margin-top: 0;
+}
+
+.bai-viet p {
+    margin-bottom: 1.1rem;
+    text-align: justify;
+}
+
+/* Ảnh nằm bên phải đoạn thân bài */
+.bai-viet__anh {
+    float: right;
+    width: 42%;
+    max-width: 390px;
+    margin: 6px 0 20px 28px;
+    background: var(--xanh-nhat);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 14px 30px rgba(9, 62, 76, 0.22);
+}
+
+.bai-viet__anh img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px 18px 0 0;
+}
+
+.bai-viet__anh figcaption {
+    padding: 10px 14px 12px;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: var(--xam);
+    text-align: center;
+    font-style: italic;
+}
+
+/* ---------- Danh sách thông tin ---------- */
+
+.thong-tin {
+    clear: both;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    list-style: none;
+    margin: 26px 0 10px;
+    padding: 22px;
+    border-radius: 16px;
+    background: var(--xanh-nhat);
+    border-left: 5px solid var(--vang-cat);
+}
+
+.thong-tin li {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    color: var(--xam);
+}
+
+.thong-tin span {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--xanh-bien);
+}
+
+/* ---------- Chân trang ---------- */
+
+.chan-trang {
+    clear: both;
+    padding: 22px 56px 30px;
+    border-top: 1px solid #e3ecee;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--xam);
+}
+
+/* ---------- Màn hình nhỏ ---------- */
+
+@media (max-width: 720px) {
+    body {
+        padding: 18px 10px;
+    }
+
+    .tieu-de {
+        padding: 40px 24px 36px;
+    }
+
+    .bai-viet {
+        padding: 30px 24px 18px;
+    }
+
+    .bai-viet__anh {
+        float: none;
+        width: 100%;
+        max-width: none;
+        margin: 0 0 22px;
+    }
+
+    .thong-tin {
+        grid-template-columns: 1fr;
+    }
+
+    .chan-trang {
+        padding: 20px 24px 26px;
+    }
+}
